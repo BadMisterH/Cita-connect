@@ -2,4 +2,4 @@
 
 ##Projet collaboratif 
 
- # A faire : installation ecosysteme react
+ # Fait : installation ecosysteme react
