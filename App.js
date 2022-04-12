@@ -1,20 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import "./styles/index.scss"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Eren</Text>
+    <View style={Appstyles.container}>
+      <Text>s</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFEDC',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+
+
