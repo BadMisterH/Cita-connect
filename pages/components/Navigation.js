@@ -3,6 +3,8 @@ import Inscription from "../screens/Inscription";
 import Connexion from "../screens/Connexion"
 import InscriptionName from "../screens/InscriptionName"
 import InscriptionMail from "../screens/InscriptionMail"
+import InscriptionMdp from "../screens/InscriptionMdp"
+
 import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {StyleSheet} from 'react-native';
@@ -62,6 +64,18 @@ return(
         fontWeight: 'bold',
       },
     }} name="InscriptionMail" component={InscriptionMail}/>
+
+<Stack.Screen  options={{
+      title: 'Mdp',
+      headerStyle: {
+        backgroundColor: '#FFFEDC',
+      },
+      headerTintColor: '#1E3D59',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }} name="InscriptionMdp" component={InscriptionMdp}/>
+
     </Stack.Navigator >
 </NavigationContainer>
 

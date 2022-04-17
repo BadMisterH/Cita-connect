@@ -28,6 +28,7 @@ export default function InscriptionMail({navigation}) {
 {/* button contianer */}
 <View style={stylesGlobal.buttonContainer}>
 <Pressable  style={stylesGlobal.buttonSuivant}
+  onPress={() => navigation.navigate('InscriptionMdp')}
 >
   <Text style={stylesGlobal.colorBtn}>Suivant</Text>
 </Pressable>
