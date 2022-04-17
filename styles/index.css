@@ -1,0 +1,70 @@
+.container {
+  background-color: #FFFEDC;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerTxt {
+  width: 80%;
+  margin: auto;
+}
+
+.styleTitle {
+  font-size: 2rem;
+}
+
+.styleTxt, .styleTitle {
+  color: #1E3D59;
+}
+
+.input {
+  border: solid 2px #777;
+  padding: 5px;
+  margin: 20px 0px;
+  width: auto;
+  border-radius: 15px;
+  background-color: white;
+  margin-top: 32px;
+}
+
+.buttonContainer {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.buttonSuivant {
+  padding: 10px;
+  color: red;
+  width: 150px;
+  background-color: #1E3D59;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.buttonRetour {
+  padding: 10px;
+  color: red;
+  width: 150px;
+  background-color: #E2801B;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 14px;
+}
+
+.colorBtn {
+  color: white;
+}
+
+/*# sourceMappingURL=index.css.map */

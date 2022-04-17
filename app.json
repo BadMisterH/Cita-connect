@@ -4,9 +4,9 @@
     "slug": "Cita-connect",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/img/logo_cita_connect_orange_transparent.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/img/logo_cita_connect_orange_transparent.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,12 +21,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/img/logo_cita_connect_orange_transparent.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/img/logo_cita_connect_orange_transparent.png"
     },
     "packagerOpts": {
       "config": "metro.config.js",

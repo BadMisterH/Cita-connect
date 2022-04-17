@@ -1,0 +1,99 @@
+.container{
+    background-color: #FFFEDC;
+    flex : 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerTxt{
+    // border : solid 2px red;
+    width : 80%;
+    margin : 0px auto;
+}
+
+.containerConnexion{
+    width : 80%;
+    margin : 50px auto 0px;
+}
+
+//mettre dans un componant style
+
+.styleTitle{
+    font-size : 1.5rem;
+    font-weight: bold;
+}
+
+.styleTxt{
+    font-size: 14px;
+}
+
+.styleTxt, .styleTitle{
+    color : #1E3D59;
+}
+
+//input styles 
+.input{
+    border : solid 2px #777;
+    padding : 5px;
+    margin : 20px 0px;
+    width : auto;
+    border-radius : 15px;
+    background-color : white;
+    margin-top : 12px;
+}
+
+//button
+
+.buttonContainer{
+    // border : solid 2px blue;
+    width : 100%;
+    justify-content : center;
+    align-items : center;
+    display : flex;
+    // border : solid 2px red;
+    flex-direction : column;
+    margin-top : 10px;
+}
+
+.buttonSuivant{
+    padding : 10px;
+    width : 150px;
+    // border : solid 2px red;
+    background-color : #1E3D59;
+    color : white;
+    display : flex;
+    align-items : center;
+    padding : 15px;
+    border-radius : 20px;
+}
+
+.buttonRetour{
+    padding : 10px;
+    color : red;
+    width : 150px;
+    // border : solid 2px red;
+    background-color : #E2801B;
+    color : white;
+    display : flex;
+    align-items : center;
+    padding : 15px;
+    border-radius : 20px;
+    margin-top : 14px;
+}
+
+.colorBtn{
+    color : white;
+}
+
+.nav{
+    background-color : red;
+}
+
+.Img{
+    height : 150px;
+    width : 150px;
+    position: absolute;
+    top : 0;
+}
