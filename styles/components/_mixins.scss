@@ -1,0 +1,17 @@
+@mixin flexPosition ($flexSize, $typedisplay, $poshorizontal, $posVertical) {
+
+    flex :$flexSize;
+    display: $typedisplay;
+    justify-content: $poshorizontal;
+    align-items: $posVertical;
+    flex-direction: column;
+
+}
+
+@mixin ImgSize ($h, $l) {
+    height : $h;
+    width: $w;
+    object-fit: contain;
+}
+
+

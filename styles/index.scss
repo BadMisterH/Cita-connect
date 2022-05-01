@@ -6,21 +6,23 @@
     align-items: center;
 
 }
+.containerConnexion, .containerMdp, .containerInscription{
+    flex: 0.8;
 
-.containerTxt{
-    // border : solid 2px red;
-    width : 80%;
-    margin : 0px auto;
 }
 
-.containerConnexion{
-    width : 80%;
-    margin : 50px auto 0px;
+.Img{
+    margin : 40px auto 20px;
 }
+
+.containerInscription{
+    margin : 150px auto;
+    color : #1E3D59;
+}
+
 
 .containerMdp{
-    width : 80%;
-    margin : -10px auto 0px; 
+    padding-top : 80px;
 }
 
 //mettre dans un componant style
@@ -28,6 +30,7 @@
 .styleTitle{
     font-size : 1.3rem;
     font-weight: bold;
+    color : #1E3D59;
 }
 
 .styleTxt{
@@ -53,19 +56,16 @@
 
 .buttonContainer{
     // border : solid 2px blue;
-    width : 100%;
     justify-content : center;
     align-items : center;
     display : flex;
-    // border : solid 2px red;
-    flex-direction : column;
-    margin-top : 10px;
+    padding : 20px 0px;
+    flex-direction : row;
 }
 
 .buttonSuivant{
     padding : 10px;
     width : 150px;
-    // border : solid 2px red;
     background-color : #1E3D59;
     color : white;
     display : flex;
@@ -76,29 +76,21 @@
 
 .buttonRetour{
     padding : 10px;
-    color : red;
     width : 150px;
-    // border : solid 2px red;
+    display : flex;
+    align-items : center;   
     background-color : #E2801B;
     color : white;
-    display : flex;
-    align-items : center;
     padding : 15px;
+    margin-left : 10px;
     border-radius : 20px;
-    margin-top : 14px;
 }
 
 .colorBtn{
     color : white;
 }
 
-.nav{
-    background-color : red;
-}
-
 .Img{
-    height : 150px;
-    width : 150px;
-    position: absolute;
-    top : 0;
+    height : 100px;
+    width : 100px;
 }

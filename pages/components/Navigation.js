@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import Inscription from "../screens/Inscription";
 import Connexion from "../screens/Connexion"
-import InscriptionName from "../screens/InscriptionName"
+import InscriptionPrenom from "../screens/InscriptionFirstName"
 import InscriptionMail from "../screens/InscriptionMail"
 import InscriptionMdp from "../screens/InscriptionMdp"
 
@@ -21,7 +21,6 @@ return(
 <NavigationContainer>
   <Stack.Navigator  style={styles.nav} initialRouteName='Connexion'>
     <Stack.Screen  
-    
     options={{
       title: 'Connexion',
       headerStyle: {
@@ -53,7 +52,7 @@ return(
       headerTitleStyle: {
         fontWeight: 'bold',
       },
-    }} name="InscriptionName" component={InscriptionName}/>
+    }} name="InscriptionPrenom" component={InscriptionPrenom}/>
     <Stack.Screen   options={{
       title: 'Adresse-mail',
       headerStyle: {

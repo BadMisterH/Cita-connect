@@ -8,17 +8,19 @@ export default function Connexion({ navigation }) {
 
   //insert code
 
+
   return (
   
 <SafeAreaView style={stylesGlobal.container}>
 {/* recupérer les donnes dans l'inscription */}
 
+
+
+<View style={stylesGlobal.containerConnexion}>
 <Image
         style={stylesGlobal.Img}
         source={require('../../assets/img/logo_cita_connect_orange_transparent.png')}
      />
-
-<View style={stylesGlobal.containerConnexion}>
 <Text style={stylesGlobal.styleTitle}>Adresse-mail *</Text>
 <Text style={stylesGlobal.styleTxt}>Quel est votre e-mail ?</Text>
 <TextInput style={stylesGlobal.input}
@@ -32,12 +34,6 @@ secureTextEntry={true}
   placeholder="Saisir votre mot de passe"
 ></TextInput>
 
-</View>
-
-
-
-
-{/* button contianer */}
 <View style={stylesGlobal.buttonContainer}>
 <Pressable  style={stylesGlobal.buttonSuivant}
 //ajout d'une condition pour verifier le champs 
@@ -45,12 +41,25 @@ secureTextEntry={true}
   <Text style={stylesGlobal.colorBtn}>Connexion</Text>
 </Pressable>
 <Pressable  style={stylesGlobal.buttonRetour}
-onPress={() => navigation.navigate('Inscription')}
+onPress={() => navigation.navigate('Inscription')
+
+
+
+
+}
 >
   <Text style={stylesGlobal.colorBtn}>Pas inscrit ?</Text>
 </Pressable>    
 
 </View> 
+
+</View>
+
+
+
+
+{/* button contianer */}
+
 
 
 
