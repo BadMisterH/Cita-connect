@@ -100,3 +100,14 @@ export default function InscriptionMdp({navigation}) {
     </SafeAreaView>
   );
 }
+
+
+export default function eren({}) {
+
+  return (
+    
+  <>
+  </>
+  )
+
+}
