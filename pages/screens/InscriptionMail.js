@@ -21,7 +21,7 @@ export default function InscriptionMail({navigation}) {
       alert("Veuillez saisir une adresse mail");
     }else {
       if(!MailInput.match(regEmailCheck)){
-        alert("Veuillez saisir une adresse mail valide")
+        alert("Veuillez saisir une adresse mail invalide")
       }else{
         navigation.navigate('InscriptionMdp')
       }
