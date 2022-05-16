@@ -12,7 +12,7 @@ export default function AuthStackScreen() {
   const AuthentificationStack = createNativeStackNavigator();
   return (
 
-      <AuthentificationStack.Navigator initialRouteName="Landing">
+      <AuthentificationStack.Navigator initialRouteName="SignUp">
         <AuthentificationStack.Screen
           name = "Inscription"
           component={Inscription}
