@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Connexion from "./Connexion";
 import { Checkbox } from "react-native-paper";
 import { useState } from "react";
 import {
@@ -14,9 +15,9 @@ import {
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 
-export default function Inscription() {
+export default function Inscription({navigation}) {
   //vérification coordonnée
-  const [checked, setChecked] = useState(false)
+  // const [checked, setChecked] = useState(false)
   const CheckFormulaire = Yup.object().shape({
     //LoginFromSchema
     // Prenom: Yup.string()
@@ -35,7 +36,7 @@ export default function Inscription() {
       .min(8, "Mot de passe doit etre plus grand que 8 caracteres")
       .max(50, "Mot de passe doit plus petit que 50 caracteres"),
     // acceptTerms : Yup.bool().oneOf([true], "Accepter les conditions")
-      
+
     // ConfirmMdp: Yup.string()
     //   .required("Le confirmMdpDePasse doit etre saisie obligatoirement")
     //   .oneOf(
@@ -48,13 +49,13 @@ export default function Inscription() {
     // ),
   });
 
-  const initialValuesDonnee= {
-    FullName: '',
-    Email: '',
-    Password: '',
+  const initialValuesDonnee = {
+    FullName: "",
+    Email: "",
+    Password: "",
     // acceptTerms : false
     //formik qui est un formulaire recupérant les champs saisies par les utilisateurs
-  }
+  };
 
   return (
     <Container>
@@ -73,15 +74,20 @@ export default function Inscription() {
           initialValues={initialValuesDonnee}
           validationSchema={CheckFormulaire} //props  //valudationSchema permet de faire la verification de checkFormulaire
           validateOnMount={true}
-          onSubmit={(values) => console.log(values)
-          
-          }
-
+          onSubmit={(values) => console.log(values)}
         >
           {/* chaque element stocker dans une view */}
 
           {/* formil permet de recuperer les valeurs grace au handles et à la values dans chaque champs du formulaire et mettre de nouveau argument */}
-          {({ handleChange, handleBlur, handleSubmit, values, isValid, errors, touched }) => (
+          {({
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            values,
+            isValid,
+            errors,
+            touched,
+          }) => (
             <>
               <Forum>
                 {/* text input id */}
@@ -102,7 +108,11 @@ export default function Inscription() {
                   onBlur={handleBlur("FullName")}
                   value={values.FullName}
                 ></TextInput>
-                 {(errors.FullName && touched.FullName) && <Text style={{fontSize:10, color: "red"}}>{errors.FullName}</Text>}
+                {errors.FullName && touched.FullName && (
+                  <Text style={{ fontSize: 10, color: "red" }}>
+                    {errors.FullName}
+                  </Text>
+                )}
               </Forum>
 
               {/* <Forum>
@@ -146,8 +156,12 @@ export default function Inscription() {
                   onBlur={handleBlur("Email")}
                   value={values.Email}
                 ></TextInput>
-                 {(errors.Email && touched.Email) && <Text style={{fontSize:10, color: "red"}}>{errors.Email}</Text>}
-                 {/* verification propre en css si errors est true */}
+                {errors.Email && touched.Email && (
+                  <Text style={{ fontSize: 10, color: "red" }}>
+                    {errors.Email}
+                  </Text>
+                )}
+                {/* verification propre en css si errors est true */}
               </Forum>
 
               <Forum>
@@ -162,7 +176,11 @@ export default function Inscription() {
                   onBlur={handleBlur("Password")}
                   value={values.Password}
                 ></TextInput>
-              {(errors.Password && touched.Password) && <Text style={{fontSize:10, color: "red"}}>{errors.Password}</Text>}
+                {errors.Password && touched.Password && (
+                  <Text style={{ fontSize: 10, color: "red" }}>
+                    {errors.Password}
+                  </Text>
+                )}
               </Forum>
 
               {/* <Case>
@@ -202,6 +220,17 @@ export default function Inscription() {
                   <Text style={FormStyles.Txt}>S'inscrire</Text>
                 </TouchableOpacity>
               </Pressable>
+
+              <View style={FormStyles.Log}>
+                <Text style={{fontSize : 12}}>Si vous avez deja un compte </Text>
+              <Pressable>
+                <TouchableOpacity onPress={() => navigation.push('Connexion')}> 
+                  <Text style={{color : "blue", fontSize : 12}}>Connexion</Text>
+                </TouchableOpacity>
+              </Pressable>
+              </View>
+
+           
             </>
           )}
         </Formik>
@@ -228,13 +257,13 @@ const Forum = styled.View`
   margin-top: 0px;
 `;
 
-const Case = styled.View`
+{/* <const Case = styled.View`
   width: 100%;
   margin-top: 0px;
-  display : flex;
-  flex-direction : row;
-  alignItems : center;
-`;
+  display: flex;
+  flex-direction: row;
+  alignitems: center;
+`;> */}
 
 const Logo = StyleSheet.create({
   ImgSize: {
@@ -247,9 +276,9 @@ const Logo = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 20,
   },
-  checkbox : {
-    display : "flex"
-  }
+  checkbox: {
+    display: "flex",
+  },
 });
 
 const FormStyles = StyleSheet.create({
@@ -262,7 +291,15 @@ const FormStyles = StyleSheet.create({
     padding: 5,
   },
 
-  Button: isValid => ({
+  Log : {
+    display : "flex",
+    flexDirection : "row",
+    alignItems : "center",
+    justifyContent : "center",
+    marginTop : 10
+  },
+
+  Button: (isValid) => ({
     backgroundColor: isValid ? "blue" : "red", // achanger
     margin: 10,
     paddingLeft: 40,
