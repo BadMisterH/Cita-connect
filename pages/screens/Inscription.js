@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
+import stylesGlobal from "../../styles/styles.scss";
 
 export default function Inscription({navigation}) {
   //vérification coordonnée
@@ -92,13 +93,14 @@ export default function Inscription({navigation}) {
               <Forum>
                 {/* text input id */}
                 <TextInput
-                  style={[
-                    FormStyles.ChampStyle, //second style grace au tableau d'objet
-                    {
-                      // borderColor :
-                      // values.Nom.length > 1 ? '#f4f3' : "red"
-                    },
-                  ]}
+                  // style={[
+                  //   FormStyles.ChampStyle, //second style grace au tableau d'objet
+                  //   {
+                  //     // borderColor :
+                  //     // values.Nom.length > 1 ? '#f4f3' : "red"
+                  //   },
+                  // ]}
+                  style={stylesGlobal.inputMain}
                   placeholder="Nom Prenom"
                   placeholderTextColor="#1E3D59"
                   autoFocus={false}
@@ -138,15 +140,16 @@ export default function Inscription({navigation}) {
               <Forum>
                 {/* text input for email */}
                 <TextInput
-                  style={[
-                    FormStyles.ChampStyle,
+                  // style={[
+                  //   FormStyles.ChampStyle,
 
-                    {
-                      // borderColor :
-                      // values.Email.match(regEmailCheck) ?
-                      // 'blue' : "red"
-                    },
-                  ]}
+                  //   {
+                  //     // borderColor :
+                  //     // values.Email.match(regEmailCheck) ?
+                  //     // 'blue' : "red"
+                  //   },
+                  // ]}
+                  style={stylesGlobal.inputMain}
                   placeholder="Adresse mail"
                   placeholderTextColor="#1E3D59"
                   autoFocus={false}
@@ -166,8 +169,9 @@ export default function Inscription({navigation}) {
 
               <Forum>
                 <TextInput
-                  style={FormStyles.ChampStyle}
-                  placeholder="mot de passe"
+                  // style={FormStyles.ChampStyle}
+                  style={stylesGlobal.inputMain}
+                  placeholder="Mot de passe"
                   placeholderTextColor="#1E3D59"
                   autoFocus={false}
                   autoCorrect={false}
@@ -217,7 +221,11 @@ export default function Inscription({navigation}) {
               >
                 {/* eren */}
                 <TouchableOpacity>
-                  <Text style={FormStyles.Txt}>S'inscrire</Text>
+                  <Text 
+                  // style={FormStyles.Txt} 
+                  style={stylesGlobal.button}>
+                    S'inscrire
+                  </Text>
                 </TouchableOpacity>
               </Pressable>
 
@@ -289,6 +297,10 @@ const FormStyles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1,
     padding: 5,
+    // borderBottomLeftRadius: 20,
+    // borderTopLeftRadius: 20,
+    // borderBottomRightRadius: 20,
+    // borderTopRightRadius: 20,
   },
 
   Log : {
