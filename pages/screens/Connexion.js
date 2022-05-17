@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
-import {firebase, db} from "../../firebase";
+import firebase from "../../firebase";
 import Inscription from "./Inscription";
 
 export default function Connnexion({ navigation }) {
@@ -31,7 +31,7 @@ export default function Connnexion({ navigation }) {
       .required("L'email est obligatoire"),
     Password: Yup.string()
       .required("Mot de passe est obligatoire")
-      .min(8, "Mot de passe doit etre plus grand que 8 caracteres")
+      .min(6, "Mot de passe doit etre plus grand que 6 caracteres")
       .max(50, "Mot de passe doit plus petit que 50 caracteres"),
     // acceptTerms : Yup.bool().oneOf([true], "Accepter les conditions")
 
@@ -94,7 +94,7 @@ export default function Connnexion({ navigation }) {
         <Formik
           initialValues={initialValuesDonnee}
           onSubmit={(values) => {
-            LoginBon(values.Email, values.Password); //onSubmit on recuperer l'id et le mdp du champs saisie par le user
+            ConnexionReussie(values.Email, values.Password); //onSubmit on recuperer l'id et le mdp du champs saisie par le user
           }}
           validationSchema={CheckFormulaire} //props  //valudationSchema permet de faire la verification de checkFormulaire
           validateOnMount={true}
