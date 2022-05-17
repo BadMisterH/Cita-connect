@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Checkbox } from "react-native-paper";
 import { useState } from "react";
+// import { Checkbox } from "react-native-paper";
 import {
   View,
   Image,
@@ -10,11 +10,14 @@ import {
   TouchableOpacity,
   TextInput,
   Pressable,
+  Alert,
 } from "react-native";
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
+import {firebase, db} from "../../firebase";
+import Inscription from "./Inscription";
 
-export default function Connnexion({navigation}) {
+export default function Connnexion({ navigation }) {
   //vérification coordonnée
   // const [checked, setChecked] = useState(false)
   const CheckFormulaire = Yup.object().shape({
@@ -44,6 +47,30 @@ export default function Connnexion({navigation}) {
     // ),
   });
 
+  //Checker si l'email et le password sont dispo dans la base de données
+  const ConnexionReussie = async (Email, Password) => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(Email, Password);
+      console.log("Connexion reussi de la part de l'utilisateur", Email, Password);
+    } catch (error) {
+      Alert.alert(
+        `L'utilisateur n'est pas reconnu dans notre base de donnée`, //title
+        error.message + `\n\nL'utilisateur n'existe pas`,
+        [
+          {
+            text: "OK",
+            onPress: () => console.log("OK"),
+            style: "cancel",
+          },
+          {
+            text: "Inscription",
+            onPress: () => navigation.push("Inscription"),
+          },
+        ]
+      );
+    }
+  };
+
   const initialValuesDonnee = {
     Email: "",
     Password: "",
@@ -66,9 +93,12 @@ export default function Connnexion({navigation}) {
 
         <Formik
           initialValues={initialValuesDonnee}
+          onSubmit={(values) => {
+            LoginBon(values.Email, values.Password); //onSubmit on recuperer l'id et le mdp du champs saisie par le user
+          }}
           validationSchema={CheckFormulaire} //props  //valudationSchema permet de faire la verification de checkFormulaire
           validateOnMount={true}
-          onSubmit={(values) => console.log(values)}
+          // onSubmit={(values) => console.log(values)}
         >
           {/* chaque element stocker dans une view */}
 
@@ -83,7 +113,6 @@ export default function Connnexion({navigation}) {
             touched,
           }) => (
             <>
-
               {/* <Forum>
                 <TextInput
                   style={[FormStyles.ChampStyle,
@@ -191,15 +220,19 @@ export default function Connnexion({navigation}) {
               </Pressable>
 
               <View style={FormStyles.Log}>
-                <Text style={{fontSize : 12}}>Si vous n'avez pas de compte </Text>
-              <Pressable>
-                <TouchableOpacity onPress={() => navigation.push('Inscription')}> 
-                  <Text style={{color : "blue", fontSize : 12}}>Inscription</Text>
-                </TouchableOpacity>
-              </Pressable>
+                <Text style={{ fontSize: 12 }}>
+                  Si vous n'avez pas de compte{" "}
+                </Text>
+                <Pressable>
+                  <TouchableOpacity
+                    onPress={() => navigation.goBack("Inscription")}
+                  >
+                    <Text style={{ color: "blue", fontSize: 12 }}>
+                      Inscription
+                    </Text>
+                  </TouchableOpacity>
+                </Pressable>
               </View>
-
-           
             </>
           )}
         </Formik>
@@ -226,13 +259,15 @@ const Forum = styled.View`
   margin-top: 0px;
 `;
 
-{/* <const Case = styled.View`
+{
+  /* <const Case = styled.View`
   width: 100%;
   margin-top: 0px;
   display: flex;
   flex-direction: row;
   alignitems: center;
-`;> */}
+`;> */
+}
 
 const Logo = StyleSheet.create({
   ImgSize: {
@@ -260,12 +295,12 @@ const FormStyles = StyleSheet.create({
     padding: 5,
   },
 
-  Log : {
-    display : "flex",
-    flexDirection : "row",
-    alignItems : "center",
-    justifyContent : "center",
-    marginTop : 10
+  Log: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
   },
 
   Button: (isValid) => ({

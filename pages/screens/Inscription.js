@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Connexion from "./Connexion";
 import { Checkbox } from "react-native-paper";
 import { useState } from "react";
+import {firebase, db} from "../../firebase";
 import {
   View,
   Image,
@@ -49,6 +50,24 @@ export default function Inscription({navigation}) {
     // ),
   });
 
+  const InscriptionReussie = async (Email, Password) =>{
+    try{
+      await firebase.auth().createUserWithEmailAndPassword(Email, Password)
+      console.log("Utilisateur créer dans notre base de donnée");
+      // [
+      //   {
+      //     onPress : () => navigation.push()
+      //   }
+      // ]
+      
+      //rediriger l'utilisateur sur la page home
+
+
+    } catch(error){
+      Alert.alert(error.message)
+    }
+  }
+
   const initialValuesDonnee = {
     FullName: "",
     Email: "",
@@ -74,7 +93,7 @@ export default function Inscription({navigation}) {
           initialValues={initialValuesDonnee}
           validationSchema={CheckFormulaire} //props  //valudationSchema permet de faire la verification de checkFormulaire
           validateOnMount={true}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => InscriptionReussie(values.Email, values.Password)}
         >
           {/* chaque element stocker dans une view */}
 
@@ -99,7 +118,7 @@ export default function Inscription({navigation}) {
                       // values.Nom.length > 1 ? '#f4f3' : "red"
                     },
                   ]}
-                  placeholder="Nom Prenom"
+                  placeholder="Saisir un nom complet"
                   placeholderTextColor="#1E3D59"
                   autoFocus={false}
                   secureTextEntry={false}
