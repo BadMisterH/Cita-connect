@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Connexion from "./Connexion";
 import { Checkbox } from "react-native-paper";
 import { useState } from "react";
-import firebase from "../../firebase";
+import {firebase, db} from "../../firebase";
 import {
   View,
   Image,
@@ -54,6 +54,7 @@ export default function Inscription({navigation}) {
     try{
       await firebase.auth().createUserWithEmailAndPassword(Email, Password)
       console.log("Utilisateur créer dans notre base de donnée");
+      
     } catch(error){
       Alert.alert(error.message)
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Home from "../screens/HomePage"
 import { useState } from "react";
 // import { Checkbox } from "react-native-paper";
 import {
@@ -14,7 +15,7 @@ import {
 } from "react-native";
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
-import firebase from "../../firebase";
+import {firebase, db} from "../../firebase";
 import Inscription from "./Inscription";
 
 export default function Connnexion({ navigation }) {
@@ -51,11 +52,15 @@ export default function Connnexion({ navigation }) {
   const ConnexionReussie = async (Email, Password) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(Email, Password);
-      console.log("Connexion reussi de la part de l'utilisateur", Email, Password);
+      console.log(
+        "Connexion reussi de la part de l'utilisateur",
+        Email,
+        Password //cryté" le mot de passe
+      );
     } catch (error) {
       Alert.alert(
         `L'utilisateur n'est pas reconnu dans notre base de donnée`, //title
-        error.message + `\n\nL'utilisateur n'existe pas`,
+        "" + `\n\nL'utilisateur n'existe pas`,
         [
           {
             text: "OK",
@@ -179,6 +184,26 @@ export default function Connnexion({ navigation }) {
                     {errors.Password}
                   </Text>
                 )}
+              </Forum>
+
+              <Forum>
+                <TouchableOpacity style={{
+                  display : "flex",
+                  width : "100%",
+                  alignItems : "flex-end",
+                }
+
+                }>
+                  <Pressable>
+                    <Text style={
+                      {
+                        color : "blue",
+                        fontSize : 12
+                      }
+                      
+                    }>Mot de passe oublié ?</Text>
+                  </Pressable>
+                </TouchableOpacity>
               </Forum>
 
               {/* <Case>

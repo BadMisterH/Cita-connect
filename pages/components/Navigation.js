@@ -1,43 +1,62 @@
-import "react-native-gesture-handler";
+//fichier pour creer les chemin des fichiers pour l'authentification
+import 'react-native-gesture-handler';
+//Page Inscription Connexion
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Inscription from "../screens/Inscription";
 import Connexion from "../screens/Connexion";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet } from "react-native";
+import Connnexion from '../screens/Connexion';
+import HomePage from '../screens/HomePage';
 
-// import {Provider as PaperProvider} from 'react-native-paper';
-
-// const  {Navigator, Screen } = createStackNavigation();
-
-const Stack = createNativeStackNavigator();
-
-const Navigation = () => {
+export default function AuthStackScreen() { //deconnexion
+  const AuthentificationStack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Connexion">
-        <Stack.Screen
-          options={{
-            title: "Connexion",
-            headerStyle: {
-              backgroundColor: "#FFFEDC",
-            },
-            headerTintColor: "#1E3D59",
-            headerTitleStyle: {
-              fontWeight: "bold",
-            },
-          }}
-          name="Connexion"
-          component={Connexion} />
 
-        </Stack.Navigator>
-          
-    </NavigationContainer>
+      <AuthentificationStack.Navigator initialRouteName="Auth" options={{ headerShown: false }}>
+
+{/* si utilisateur co */}
+      <AuthentificationStack.Screen
+        name="Inscription"
+        component={Inscription}
+        options={{ headerShown: false }}
+      />
+      <AuthentificationStack.Screen
+        name="Connexion"
+        component={Connexion}
+        options={{ headerShown: false }}
+      />
+
+
+{<AuthentificationStack.Screen
+        name="HomePage"
+        component={HomePage}
+        options={{ headerShown: false }}
+      />
+    }
+
+{/* 
+        <AuthentificationStack.Screen
+          name = "HomePage"
+          component={HomePage}
+          options={{headerShown: false}}
+        /> */}
+      </AuthentificationStack.Navigator>
+
   );
-};
+}
 
-const styles = StyleSheet.create({
-  nav: {
-    backgroundColor: "red",
-  },
-});
+export const Connecter = () => {
 
-export default Navigation;
+
+  <AuthentificationStack.Navigator initialRouteName="Home" options={{ headerShown: false }}>
+
+      {<AuthentificationStack.Screen
+        name="HomePage"
+        component={HomePage}
+        options={{ headerShown: false }}
+      />
+    }
+    </AuthentificationStack.Navigator>
+
+}

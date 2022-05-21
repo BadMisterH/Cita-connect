@@ -1,7 +1,8 @@
 import "react-native-gesture-handler";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //page contenant toute la navigation pour l'inscription et la connexion d'hestia
-import AuthStackAffichages from "./AuthStackAffichages";
+// import AuthStackAffichages from "./AuthStackAffichages";
+import Navigation from "../components/Navigation"
 
 //tu importes les différentes screens connexion inscription sur cette page.
 //sign up : s'inscrire
@@ -13,8 +14,8 @@ export default function ApplicationScreen() {
   return (
       <AppStack.Navigator initialRouteName="Inscription">
         <AppStack.Screen
-          name="AuthStackAffichages"
-          component={AuthStackAffichages} // montrer le chemins pour afficher les fichier pour le systeme d'authentification
+          name="Navigation"
+          component={Navigation} // montrer le chemins pour afficher les fichier pour le systeme d'authentification
           options={{headerShown: false}}
           //permet de caché l'entete de header stack navigation
         />
