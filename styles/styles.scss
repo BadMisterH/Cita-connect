@@ -15,3 +15,16 @@
     color: #1E3D59;
     font-family: 'Montserrat-Regular';
 }
+
+.logoContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+  }
+
+.tinyLogo {
+    width: 50px;
+    height: 50px;
+}
