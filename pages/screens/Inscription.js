@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Connexion from "./Connexion";
-import { Checkbox } from "react-native-paper";
-import { useState } from "react";
-import {firebase, db} from "../../firebase";
 import {
   View,
   Image,
@@ -13,19 +9,13 @@ import {
   TextInput,
   Pressable,
 } from "react-native";
-import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
+import {firebase, db} from "../../firebase";
 
 export default function Inscription({navigation}) {
-  //vérification coordonnée
-  // const [checked, setChecked] = useState(false)
   const CheckFormulaire = Yup.object().shape({
-    //LoginFromSchema
-    // Prenom: Yup.string()
-    //   .min(2, "trop petit")
-    //   // .max(50, "trop Grand")
-    //   .required("Ce champ est obligatoire"),
-    FullName: Yup.string()
+    UserName: Yup.string()
       .min(3, "Trop petit")
       // .max(50, "Trop Grand")
       .required("Ce champ est obligatoire"),
@@ -36,6 +26,7 @@ export default function Inscription({navigation}) {
       .required("Mot de passe est obligatoire")
       .min(8, "Mot de passe doit etre plus grand que 8 caracteres")
       .max(50, "Mot de passe doit plus petit que 50 caracteres"),
+
     // acceptTerms : Yup.bool().oneOf([true], "Accepter les conditions")
 
     // ConfirmMdp: Yup.string()
@@ -50,22 +41,29 @@ export default function Inscription({navigation}) {
     // ),
   });
 
-  const InscriptionReussie = async (Email, Password) =>{
+  const InscriptionReussie = async (Email, Password, UserName) =>{
+
     try{
-      await firebase.auth().createUserWithEmailAndPassword(Email, Password)
-      console.log("Utilisateur créer dans notre base de donnée");
-      
+       const authUser = await firebase.auth().createUserWithEmailAndPassword(Email, Password)
+       console.log("Utilisateur créer dans notre base de donnée", 
+       Email, Password
+       );
+
+       firebase.firestore().collection('users').add({
+         owner_iud : authUser.user.uid,
+         username : UserName,
+         email : authUser.user.email
+       })
+
     } catch(error){
-      Alert.alert(error.message)
+      Alert.alert(error.message);
     }
   }
 
   const initialValuesDonnee = {
-    FullName: "",
+    UserName: "",
     Email: "",
     Password: "",
-    // acceptTerms : false
-    //formik qui est un formulaire recupérant les champs saisies par les utilisateurs
   };
 
   return (
@@ -85,7 +83,7 @@ export default function Inscription({navigation}) {
           initialValues={initialValuesDonnee}
           validationSchema={CheckFormulaire} //props  //valudationSchema permet de faire la verification de checkFormulaire
           validateOnMount={true}
-          onSubmit={(values) => InscriptionReussie(values.Email, values.Password)}
+          onSubmit={(values) => InscriptionReussie(values.Email, values.Password, values.UserName)}
         >
           {/* chaque element stocker dans une view */}
 
@@ -115,13 +113,13 @@ export default function Inscription({navigation}) {
                   autoFocus={false}
                   secureTextEntry={false}
                   autoCapitalize="none"
-                  onChangeText={handleChange("FullName")}
-                  onBlur={handleBlur("FullName")}
-                  value={values.FullName}
+                  onChangeText={handleChange("UserName")}
+                  onBlur={handleBlur("UserName")}
+                  value={values.UserName}
                 ></TextInput>
-                {errors.FullName && touched.FullName && (
+                {errors.UserName && touched.UserName && (
                   <Text style={{ fontSize: 10, color: "red" }}>
-                    {errors.FullName}
+                    {errors.UserName}
                   </Text>
                 )}
               </Forum>
@@ -227,7 +225,9 @@ export default function Inscription({navigation}) {
                 disabled={!isValid} //empeche le click sur le bouton
               >
                 {/* eren */}
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() =>{
+                    // console.log("eren")
+                }}>
                   <Text style={FormStyles.Txt}>S'inscrire</Text>
                 </TouchableOpacity>
               </Pressable>
@@ -337,13 +337,3 @@ const Formulaire = StyleSheet.create({
   },
 });
 
-//main contenant le texte
-
-// const miseEnForme = StyleSheet.create({
-//   container : {
-//     backgroundColor : "blue",
-//     flex : 1,
-//     justifyContent : "center",
-//     alignItems : "center",
-//   }
-// })

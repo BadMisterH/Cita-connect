@@ -1,8 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import Home from "../screens/HomePage"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { Checkbox } from "react-native-paper";
+import {firebase} from "../../firebase";
+
 import {
   View,
   Image,
@@ -13,14 +14,14 @@ import {
   Pressable,
   Alert,
 } from "react-native";
-import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
-import {firebase, db} from "../../firebase";
-import Inscription from "./Inscription";
+
+
 
 export default function Connnexion({ navigation }) {
-  //vérification coordonnée
-  // const [checked, setChecked] = useState(false)
+
+  
   const CheckFormulaire = Yup.object().shape({
     //LoginFromSchema
     // Prenom: Yup.string()
@@ -28,7 +29,7 @@ export default function Connnexion({ navigation }) {
     //   // .max(50, "trop Grand")
     //   .required("Ce champ est obligatoire"),
     Email: Yup.string()
-      .email("email Invalide")
+      .email("email Invalide").trim()
       .required("L'email est obligatoire"),
     Password: Yup.string()
       .required("Mot de passe est obligatoire")
@@ -50,14 +51,16 @@ export default function Connnexion({ navigation }) {
 
   //Checker si l'email et le password sont dispo dans la base de données
   const ConnexionReussie = async (Email, Password) => {
+
     try {
       await firebase.auth().signInWithEmailAndPassword(Email, Password);
       console.log(
         "Connexion reussi de la part de l'utilisateur",
         Email,
-        Password //cryté" le mot de passe
+        Password, 
       );
-    } catch (error) {
+    } 
+    catch (error) {
       Alert.alert(
         `L'utilisateur n'est pas reconnu dans notre base de donnée`, //title
         "" + `\n\nL'utilisateur n'existe pas`,
@@ -74,7 +77,10 @@ export default function Connnexion({ navigation }) {
         ]
       );
     }
+
   };
+
+
 
   const initialValuesDonnee = {
     Email: "",
@@ -186,7 +192,7 @@ export default function Connnexion({ navigation }) {
                 )}
               </Forum>
 
-              <Forum>
+              {/* <Forum>
                 <TouchableOpacity style={{
                   display : "flex",
                   width : "100%",
@@ -204,7 +210,7 @@ export default function Connnexion({ navigation }) {
                     }>Mot de passe oublié ?</Text>
                   </Pressable>
                 </TouchableOpacity>
-              </Forum>
+              </Forum> */}
 
               {/* <Case>
                 <Checkbox

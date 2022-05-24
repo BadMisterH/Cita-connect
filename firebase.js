@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyD_E-seHsahkCQR-WSVdyDLdOUGxH-X9dI",
   authDomain: "cita-connect.firebaseapp.com",
@@ -12,8 +13,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
- !firebase.apps.lenght ? firebase.initializeApp(firebaseConfig) : firebase.app()
+// firebase.initializeApp(firebaseConfig); 
 
- const db = firebase.firestore()
+!firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
- export {firebase, db};
+const db = firebase.firestore();
+
+// const auth = firebase.auth();
+
+export {firebase , db};
+
+ //4:27 video config firebase

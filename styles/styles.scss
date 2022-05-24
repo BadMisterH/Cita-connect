@@ -1,17 +1,22 @@
 *{
-    font-family: 'Montserrat-Regular';
+    border: solid ;
 }
 
-.button {
-    color: whitesmoke;
+.container{
+    background-color: #fffedc;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.inputMain {
-    padding: 5px;
-    border: 0;
-    border-bottom-width: 2px;
-    margin: 15px;
-    border-color: #1E3D59;
-    color: #1E3D59;
-    font-family: 'Montserrat-Regular';
+.Header{
+    padding: 10px;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.Logout{
+    height: 30px;
+    width: 42px;
 }
