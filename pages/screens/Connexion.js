@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Home from "../screens/HomePage"
-import { useState, useEffect } from "react";
+import { useState, useEffect, ImageBackground } from "react";
 // import { Checkbox } from "react-native-paper";
 import {firebase} from "../../firebase";
 
@@ -92,7 +92,8 @@ export default function Connnexion({ navigation }) {
   return (
     <Container>
       <View style={Formulaire.Container}>
-        <View>
+
+      <View>
           <Image
             style={Logo.ImgSize}
             source={require("../../assets/img/logo_cita_connect_orange_transparent.png")}
@@ -335,7 +336,7 @@ const FormStyles = StyleSheet.create({
   },
 
   Button: (isValid) => ({
-    backgroundColor: isValid ? "blue" : "red", // achanger
+    backgroundColor: isValid ? "#1E3D59" : "#E2801B", // achanger
     margin: 10,
     paddingLeft: 40,
     paddingRight: 40,

@@ -311,7 +311,7 @@ const FormStyles = StyleSheet.create({
   },
 
   Button: (isValid) => ({
-    backgroundColor: isValid ? "blue" : "red", // achanger
+    backgroundColor: isValid ? "#1E3D59" : "#E2801B", // achanger
     margin: 10,
     paddingLeft: 40,
     paddingRight: 40,

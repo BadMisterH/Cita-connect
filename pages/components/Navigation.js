@@ -7,6 +7,7 @@ import Inscription from "../screens/Inscription";
 import Connexion from "../screens/Connexion";
 import { NavigationContainer } from "@react-navigation/native";
 import HomePage from "../screens/HomePage";
+import BottomNav from "./BottomNav"; //HOME PAGE DE L'APPLI
 
 const AuthentificationStack = createNativeStackNavigator();
 
@@ -41,7 +42,6 @@ const AuthentificationStack = createNativeStackNavigator();
 export const Deconnexion = () => (
 
   //si l'utilisateur est pas co
-  <NavigationContainer>
 
     <AuthentificationStack.Navigator
       initialRouteName="Inscription"
@@ -59,12 +59,10 @@ export const Deconnexion = () => (
       />
     </AuthentificationStack.Navigator>
 
-    </NavigationContainer>
 );
 
 export const ConnexionEffectue = () => (
   //Si utilisateur est co
-  <NavigationContainer>
     <AuthentificationStack.Navigator
       initialRouteName="HomePage"
       options={{ headerShown: false }}
@@ -72,12 +70,11 @@ export const ConnexionEffectue = () => (
       {/* si utilisateur co */}
 
       <AuthentificationStack.Screen
-        name="HomePage"
-        component={HomePage}
+        name="BottomNav"
+        component={BottomNav}
         options={{ headerShown: false }}
       />
     </AuthentificationStack.Navigator>
-  </NavigationContainer>
 
 )
 
