@@ -12,6 +12,7 @@ import {
 import { Formik } from "formik";
 import * as Yup from "yup";
 import {firebase, db} from "../../firebase";
+import Styles from "../../styles/styles.scss";
 
 export default function Inscription({navigation}) {
   const CheckFormulaire = Yup.object().shape({
@@ -102,7 +103,7 @@ export default function Inscription({navigation}) {
                 {/* text input id */}
                 <TextInput
                   style={[
-                    FormStyles.ChampStyle, //second style grace au tableau d'objet
+                    Styles.input, //second style grace au tableau d'objet
                     {
                       // borderColor :
                       // values.Nom.length > 1 ? '#f4f3' : "red"
@@ -148,7 +149,7 @@ export default function Inscription({navigation}) {
                 {/* text input for email */}
                 <TextInput
                   style={[
-                    FormStyles.ChampStyle,
+                    Styles.input,
 
                     {
                       // borderColor :
@@ -175,8 +176,8 @@ export default function Inscription({navigation}) {
 
               <Forum>
                 <TextInput
-                  style={FormStyles.ChampStyle}
-                  placeholder="mot de passe"
+                  style={Styles.input}
+                  placeholder="Mot de passe"
                   placeholderTextColor="#1E3D59"
                   autoFocus={false}
                   autoCorrect={false}
@@ -233,7 +234,7 @@ export default function Inscription({navigation}) {
               </Pressable>
 
               <View style={FormStyles.Log}>
-                <Text style={{fontSize : 12}}>Si vous avez deja un compte </Text>
+                <Text style={{fontSize : 12}}>Si vous avez déjà un compte : </Text>
               <Pressable>
                 <TouchableOpacity onPress={() => navigation.push('Connexion')}> 
                   <Text style={{color : "blue", fontSize : 12}}>Connexion</Text>
@@ -293,14 +294,14 @@ const Logo = StyleSheet.create({
 });
 
 const FormStyles = StyleSheet.create({
-  ChampStyle: {
-    marginTop: 20,
-    borderBottomWidth: 1,
-    borderColor: "#010392",
-    marginBottom: 10,
-    borderWidth: 1,
-    padding: 5,
-  },
+  // ChampStyle: {
+  //   marginTop: 20,
+  //   borderBottomWidth: 1,
+  //   borderColor: "#010392",
+  //   marginBottom: 10,
+  //   borderWidth: 1,
+  //   padding: 5,
+  // },
 
   Log : {
     display : "flex",
