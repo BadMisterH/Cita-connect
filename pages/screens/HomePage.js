@@ -23,7 +23,7 @@ const DecoClick = async () => {
 const HomePage = () => {
   return (
 
-    <View style={Styles.container}>
+    <View style={Styles.containerHome}>
           {/* Bouton de deconnexion  */}
       <View style={Styles.HeaderBtnDeconnexion}>
         <Pressable titleSize={20}>
@@ -35,9 +35,54 @@ const HomePage = () => {
           </TouchableOpacity>
         </Pressable>
       </View>
-      <View style={StylesMairie.Container}>
-    <Text style={{fontSize : 30, fontWeight: "bold"}}>Accueil</Text>
-  </View>
+      <View>
+        <Text style={{fontSize : 30, fontWeight: "bold"}}>Accueil</Text>
+      </View>
+      {/* Liste des boutons */}
+      <View style={Styles.buttonList}>
+        <TouchableOpacity style={[Styles.buttonContainer, Styles.blueButton]} activeOpacity={0.5}>
+          <Image
+          source={require('../../assets/img/favicon.png')}
+          style={Styles.ImageIconStyle}
+          />
+          <Text style={Styles.buttonText}>Info</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[Styles.buttonContainer, Styles.greenButton]} activeOpacity={0.5}>
+          <Image
+          source={require('../../assets/img/favicon.png')}
+          style={Styles.ImageIconStyle}
+          />
+          <Text style={Styles.buttonText}>Ma ville</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[Styles.buttonContainer,Styles.orangeButton]} activeOpacity={0.5}>
+          <Image
+          source={require('../../assets/img/favicon.png')}
+          style={Styles.ImageIconStyle}
+          />
+          <Text style={Styles.buttonText}>Référendum</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[Styles.buttonContainer,Styles.redButton]} activeOpacity={0.5}>
+          <Image
+          source={require('../../assets/img/favicon.png')}
+          style={Styles.ImageIconStyle}
+          />
+          <Text style={Styles.buttonText}>Urgence</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[Styles.buttonContainer,Styles.aquaButton]} activeOpacity={0.5}>
+          <Image
+          source={require('../../assets/img/favicon.png')}
+          style={Styles.ImageIconStyle}
+          />
+          <Text style={Styles.buttonText}>Flux général</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[Styles.buttonContainer,Styles.yellowButton]} activeOpacity={0.5}>
+          <Image
+          source={require('../../assets/img/favicon.png')}
+          style={Styles.ImageIconStyle}
+          />
+          <Text style={Styles.buttonText}>Messages</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

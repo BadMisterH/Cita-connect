@@ -35,3 +35,66 @@
     border-radius: 15px;
 }
 
+.containerHome {
+    background-color: #fffedc;
+    width: 100%;
+    height: 100%;
+}
+
+.buttonList {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buttonText {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.blueButton {
+    background-color: #0071BC;
+}
+
+.greenButton {
+    background-color: #3EC03E;
+}
+
+.orangeButton {
+    background-color: #FA9116;
+}
+
+.redButton {
+    background-color: #D33535;
+}
+
+.aquaButton {
+    background-color: #35C0D3;
+}
+
+.yellowButton {
+    background-color: #E7DF1E;
+}
+
+.ImageIconStyle {
+    width: 50px;
+}
+

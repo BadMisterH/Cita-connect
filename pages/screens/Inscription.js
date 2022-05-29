@@ -314,11 +314,13 @@ const FormStyles = StyleSheet.create({
   Button: (isValid) => ({
     backgroundColor: isValid ? "#1E3D59" : "#E2801B", // achanger
     margin: 10,
-    paddingLeft: 40,
-    paddingRight: 40,
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: "100%",
+    height: 50,
+    width: 150,
+    // paddingRight: 40,
+    // paddingTop: 10,
+    // paddingBottom: 10,
+    borderRadius: 15,
+    textAlign : "center",
     justifyContent: "center",
     alignItems: "center",
   }),

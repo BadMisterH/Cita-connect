@@ -3,6 +3,7 @@ import Home from "../screens/HomePage"
 import { useState, useEffect, ImageBackground } from "react";
 // import { Checkbox } from "react-native-paper";
 import {firebase} from "../../firebase";
+import Styles from "../../styles/styles.scss";
 
 import {
   View,
@@ -55,7 +56,7 @@ export default function Connnexion({ navigation }) {
     try {
       await firebase.auth().signInWithEmailAndPassword(Email, Password);
       console.log(
-        "Connexion reussi de la part de l'utilisateur",
+        "Connexion réussi de la part de l'utilisateur",
         Email,
         Password, 
       );
@@ -149,13 +150,13 @@ export default function Connnexion({ navigation }) {
                 {/* text input for email */}
                 <TextInput
                   style={[
-                    FormStyles.ChampStyle,
+                    Styles.input
 
-                    {
-                      // borderColor :
-                      // values.Email.match(regEmailCheck) ?
-                      // 'blue' : "red"
-                    },
+                    // {
+                    //   // borderColor :
+                    //   // values.Email.match(regEmailCheck) ?
+                    //   // 'blue' : "red"
+                    // },
                   ]}
                   placeholder="Adresse mail"
                   placeholderTextColor="#1E3D59"
@@ -176,8 +177,8 @@ export default function Connnexion({ navigation }) {
 
               <Forum>
                 <TextInput
-                  style={FormStyles.ChampStyle}
-                  placeholder="mot de passe"
+                  style={Styles.input}
+                  placeholder="Mot de passe"
                   placeholderTextColor="#1E3D59"
                   autoFocus={false}
                   autoCorrect={false}
@@ -253,7 +254,7 @@ export default function Connnexion({ navigation }) {
 
               <View style={FormStyles.Log}>
                 <Text style={{ fontSize: 12 }}>
-                  Si vous n'avez pas de compte{" "}
+                  Si vous n'avez pas de compte : {""}
                 </Text>
                 <Pressable>
                   <TouchableOpacity
@@ -338,11 +339,13 @@ const FormStyles = StyleSheet.create({
   Button: (isValid) => ({
     backgroundColor: isValid ? "#1E3D59" : "#E2801B", // achanger
     margin: 10,
-    paddingLeft: 40,
-    paddingRight: 40,
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: "100%",
+    height: 50,
+    width: 150,
+    // paddingRight: 40,
+    // paddingTop: 10,
+    // paddingBottom: 10,
+    borderRadius: 15,
+    textAlign : "center",
     justifyContent: "center",
     alignItems: "center",
   }),
