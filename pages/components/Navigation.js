@@ -8,6 +8,7 @@ import Connexion from "../screens/Connexion";
 import { NavigationContainer } from "@react-navigation/native";
 import HomePage from "../screens/HomePage";
 import BottomNav from "./BottomNav"; //HOME PAGE DE L'APPLI
+import { SafeAreaView } from "react-native";
 
 const AuthentificationStack = createNativeStackNavigator();
 
@@ -75,7 +76,6 @@ export const ConnexionEffectue = () => (
         options={{ headerShown: false }}
       />
     </AuthentificationStack.Navigator>
-
 )
 
 

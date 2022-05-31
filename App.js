@@ -18,6 +18,7 @@ import { Text, View, Image, StyleSheet } from "react-native";
 // import Connnexion from './pages/screens/Connexion'
 import HomePage from "./pages/screens/HomePage";
 import BottomNav from "./pages/components/BottomNav";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SplashScreenLoading = ({navigation}) => {
   setTimeout(() => {

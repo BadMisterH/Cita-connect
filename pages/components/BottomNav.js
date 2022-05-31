@@ -11,6 +11,7 @@ import Urgencess from "../stacks/Urgences"
 import HomePage from "../screens/HomePage"
 import AddNewPost from '../stacks/Posts/AddNewPost';
 import Compte from "../components/backend/Compte"
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -19,7 +20,6 @@ const StackNavigator = createBottomTabNavigator();
 
 export default function BottomNav() {
   return (
-
     <StackNavigator.Navigator
       tabBarOptions={{
         activeTintColor : "#E2801B",
@@ -30,8 +30,7 @@ export default function BottomNav() {
       screenOptions={({route}) => ({
 
         tabBarStyle : {
-            backgroundColor : "#1E3D59",
-            height : 63
+            backgroundColor : "#1E3D59"
         },
 
           tabBarIcon: ({focused, color, size}) => {

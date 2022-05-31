@@ -35,7 +35,7 @@
     border-radius: 15px;
 }
 
-.containerHome {
+.containerHome, .containerEMS  {
     background-color: #fffedc;
     width: 100%;
     height: 100%;
@@ -57,8 +57,8 @@
     height: 90px;
     color: #ffffff;
     border-radius: 10px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -68,6 +68,7 @@
     font-weight: bold;
     font-size: 12px;
     margin-top: 5px;
+    text-align: center;
 }
 
 .blueButton {
@@ -95,6 +96,74 @@
 }
 
 .ImageIconStyle {
-    width: 50px;
+    // width: 50px;
+    // height: 50px;
+}
+
+.imageContainer {
+    // margin-right: 20px;
+    // margin-left: 20px;
+    /* Et on centre */
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.imageCity {
+    width: 327px;
+    height: 222px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.citytextContainer {
+    position: absolute;
+
+    bottom: 0;
+    background-color: #7C7C7C;
+    width: 327px;
+    height: 50px;
+    border-radius: 0 0 20px 20px;
+    opacity: 0.8;
+}
+
+.cityText {
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.emsbuttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.emsImages {
+    width: 55px;
+    height: 55px;
+}
+
+.emsbuttonText {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 38px;
 }
 
