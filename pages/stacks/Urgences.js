@@ -62,7 +62,7 @@ export default function Urgences() {
           source={require('../../assets/img/sourd.jpeg')}
           style={Styles.emsImages}
           />
-          <Text style={Styles.buttonText}>Numéro d'urgence pour les malentendantes</Text>
+          <Text style={Styles.buttonText}>Numéro d'urgence pour les malentendants</Text>
           <Text style={Styles.emsbuttonText}>114</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[Styles.emsbuttonContainer,Styles.blueButton]} activeOpacity={0.5}>
