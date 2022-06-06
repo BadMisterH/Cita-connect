@@ -31,7 +31,7 @@ export default function BottomNav() {
 
         tabBarStyle : {
             backgroundColor : "#1E3D59",
-            height : 70,
+            height : 95,
             paddingLeft : 34,
             paddingRight : 34,
         },
