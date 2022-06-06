@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/img/logo_cita_connect_orange_transparent.png",
     "splash": {
-      "image": "./assets/img/logo_cita_connect_orange_transparent.png",
+      "image": "",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

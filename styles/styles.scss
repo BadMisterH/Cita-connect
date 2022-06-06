@@ -1,0 +1,240 @@
+*{
+    border: solid ;
+}
+
+.container{
+    background-color: #fffedc;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.HeaderBtnDeconnexion{
+    padding: 10px;
+    width: 100%;
+    margin-top: 50px; //réglage de la hauteur du bouton de deconnexion
+    
+}
+
+.Deconnexion{
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logout{
+    height: 60px;
+    width: 60px;
+    // position: absolute;
+}
+
+.input {
+    padding: 5px;
+    padding-left: 10px;
+    border: 2px #004E78 solid;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background: white;
+}
+.btnOrange {
+    border-radius: 15px;
+}
+
+.containerHome, .containerEMS  {
+    background-color: #fffedc;
+    width: 100%;
+    height: 100%;
+}
+
+
+.containerLogout{
+    background-color: #fffedc;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonList {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buttonText {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.blueButton {
+    background-color: #0071BC;
+}
+
+.greenButton {
+    background-color: #3EC03E;
+}
+
+.orangeButton {
+    background-color: #FA9116;
+}
+
+.redButton {
+    background-color: #D33535;
+}
+
+.aquaButton {
+    background-color: #35C0D3;
+}
+
+.yellowButton {
+    background-color: #928e23;
+}
+
+
+.imageContainer {
+    // margin-right: 20px;
+    // margin-left: 20px;
+    /* Et on centre */
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.imageCity {
+    width: 327px;
+    height: 222px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.citytextContainer {
+    position: absolute;
+
+    bottom: 0;
+    background-color: #7C7C7C;
+    width: 327px;
+    height: 50px;
+    border-radius: 0 0 20px 20px;
+    opacity: 0.8;
+}
+
+.cityText {
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.emsbuttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Deconnexion{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+
+.emsImages {
+    width: 45px;
+    height: 45px;
+}
+.emsImagesOfficiel{
+    width: 30px;
+    height: 30px;
+}
+
+.emsbuttonText {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 38px;
+}
+
+.cityImage {
+    border-radius: 250px;
+    width: 250px;
+    height: 250px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.cityImageMairie {
+    border-radius: 250px;
+    width: 250px;
+    height: 250px;
+    align-self: center;
+    margin-top: 30px;
+    
+}
+
+.citypageText {
+    align-self: center;
+    width: 255px;
+    margin-top: 30px;
+}
+
+.citypageText2{
+    width: 255px;
+    align-self: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.citypagetextTitle {
+    color: #1E3D59;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.citypagetextInfo {
+    color: #1E3D59;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}

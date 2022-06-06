@@ -1,0 +1,27 @@
+* {
+  border: solid;
+}
+
+.container {
+  background-color: #fffedc;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HeaderBtnDeconnexion {
+  padding: 10px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.Logout {
+  height: 60px;
+  width: 60px;
+}
+/*# sourceMappingURL=styles.css.map */
