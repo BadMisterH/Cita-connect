@@ -57,7 +57,7 @@ export default function Inscription({navigation}) {
        })
 
     } catch(error){
-      Alert.alert(error.message);
+      alert(error.message + "inscription invalide");
     }
   }
 

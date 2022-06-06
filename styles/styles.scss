@@ -13,11 +13,20 @@
     padding: 10px;
     width: 100%;
     margin-top: 50px; //réglage de la hauteur du bouton de deconnexion
+    
+}
+
+.Deconnexion{
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .Logout{
     height: 60px;
     width: 60px;
+    // position: absolute;
 }
 
 .input {
@@ -38,6 +47,15 @@
     background-color: #fffedc;
     width: 100%;
     height: 100%;
+}
+
+
+.containerLogout{
+    background-color: #fffedc;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttonList {
@@ -91,13 +109,9 @@
 }
 
 .yellowButton {
-    background-color: #E7DF1E;
+    background-color: #928e23;
 }
 
-.ImageIconStyle {
-    // width: 50px;
-    // height: 50px;
-}
 
 .imageContainer {
     // margin-right: 20px;
@@ -159,9 +173,20 @@
     margin-right: 10px;
 }
 
+.Deconnexion{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+
 .emsImages {
     width: 55px;
     height: 55px;
+}
+.emsImagesOfficiel{
+    width: 30px;
+    height: 30px;
 }
 
 .emsbuttonText {
@@ -177,10 +202,26 @@
     align-self: center;
 }
 
+.cityImageMairie {
+    border-radius: 250px;
+    width: 250px;
+    height: 250px;
+    align-self: center;
+    margin-top: 30px;
+    
+}
+
 .citypageText {
     align-self: center;
     width: 255px;
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+.citypageText2{
+    width: 255px;
+    align-self: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .citypagetextTitle {
