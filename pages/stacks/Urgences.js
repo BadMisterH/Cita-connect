@@ -64,8 +64,13 @@ export default function Urgences() {
           onPress={()=>{Linking.openURL('tel:114');}}
         >
           <Image
+<<<<<<< HEAD
           source={require('../../assets/img/sourd.jpeg')}
           style={Styles.emsImagesOfficiel}
+=======
+          source={require('../../assets/img/sourd.png')}
+          style={Styles.emsImages}
+>>>>>>> 2d291d5062e3930177b6877c86aaddb327cd1799
           />
           <Text style={Styles.buttonText}>Numéro d'urgence pour les malentendants</Text>
           <Text style={Styles.emsbuttonText}>114</Text>
