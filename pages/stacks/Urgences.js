@@ -18,20 +18,10 @@ export default function Urgences() {
   return (
       //Deconnexion Button
     <View style={Styles.container}>
-      <View style={Styles.HeaderBtnDeconnexion}>
-        <Pressable titleSize={20}>
-          <TouchableOpacity onPress={DecoClick}>
-            <Image
-              style={Styles.Logout}
-              source={require("../../assets/img/logo_cita_connect_orange_transparent.png")}
-            />
-          </TouchableOpacity>
-        </Pressable>
-      </View>
 
     {/* contenu à remplir Page Urgences LEO*/}
     <View style={StylesUrgences.containerEMS}>
-      <Text style={{fontSize : 30, fontWeight: "bold", textAlign: "center" }}>Numéro d'urgences</Text>
+      <Text style={{fontSize : 30, fontWeight: "bold", textAlign: "center", marginTop : 20 }}>Numéro d'urgences</Text>
       <View style={Styles.buttonList}>
         <TouchableOpacity style={[Styles.emsbuttonContainer, Styles.aquaButton]} activeOpacity={0.5}>
           <Image

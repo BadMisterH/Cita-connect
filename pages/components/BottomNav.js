@@ -3,13 +3,12 @@ import Ionicons from "react-native-vector-icons/Ionicons"
 import React from 'react'
 // import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; 
-import Mairie from '../stacks/Mairie'
 
 
 //screen Stack
 import Urgencess from "../stacks/Urgences"
 import HomePage from "../screens/HomePage"
-import AddNewPost from '../stacks/Posts/AddNewPost';
+import ListesPosts from '../stacks/Posts/ListesPosts';
 import Compte from "../components/backend/Compte"
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -20,17 +19,21 @@ const StackNavigator = createBottomTabNavigator();
 
 export default function BottomNav() {
   return (
+
     <StackNavigator.Navigator
       tabBarOptions={{
         activeTintColor : "#E2801B",
         inactiveTintColor : "#F9F4F4",
-        labelStyle:{paddingBottom : 8, fontSize : 12}
+        labelStyle:{paddingBottom : 8, fontSize : 12,}
       }}
       initialRouteName="HomePage"
-      screenOptions={({route}) => ({
+      screenOptions={ ({route}) => ({
 
         tabBarStyle : {
-            backgroundColor : "#1E3D59"
+            backgroundColor : "#1E3D59",
+            height : 70,
+            paddingLeft : 34,
+            paddingRight : 34,
         },
 
           tabBarIcon: ({focused, color, size}) => {
@@ -41,16 +44,18 @@ export default function BottomNav() {
                   iconName = focused ? 'home' : 'home-outline'
                   break;
 
-                  case "Mairie":
-                    iconName = focused ? 'megaphone' : 'megaphone-outline'
+                  case "Compte":
+                    iconName = focused ? 'person-add' : 'person-add-outline'
                     break;
 
-                  case "Urgences" :
-                    iconName = focused ? 'alert' : 'alert-outline'
-                    break;
-
-                  case "Posts" : 
+                  case "Publier" :
                     iconName = focused ? 'add' : 'add-outline'
+                    break;
+
+                  case "Notifs" : 
+                    iconName = focused ? 'notifications' : 'notifications-outline'
+
+
 
                 //   case "Compte" : 
                 //     iconName = focused ? 'accessibility' : 'accessibility-outline'
@@ -58,8 +63,10 @@ export default function BottomNav() {
               }
 
               return <Ionicons name={iconName} size={size} color={color}/>
-          }
-      })}
+          },
+      })
+    
+    }
     >
 
       <StackNavigator.Screen
@@ -71,8 +78,8 @@ export default function BottomNav() {
       />
 
       <StackNavigator.Screen
-        name="Mairie"
-        component={Mairie}
+        name="Compte"
+        component={Compte}
         options={{
           headerShown : false
         }}
@@ -80,8 +87,8 @@ export default function BottomNav() {
 
 
       <StackNavigator.Screen
-        name="Urgences"
-        component={Urgencess}
+        name="Publier"
+        component={ListesPosts}
         options={{
           headerShown : false
 
@@ -89,11 +96,11 @@ export default function BottomNav() {
       />
 
         <StackNavigator.Screen
-        name="Posts"
-        component={AddNewPost}
-        options={{
-          headerShown : false
-        }}
+        name="Notifs"
+        component={ListesPosts}
+        options={{ headerShown: true, headerStyle : {
+          backgroundColor : "#FFFEDC"
+        } }}
       />
 
        {/* <StackNavigator.Screen

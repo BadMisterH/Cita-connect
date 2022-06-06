@@ -9,6 +9,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomePage from "../screens/HomePage";
 import BottomNav from "./BottomNav"; //HOME PAGE DE L'APPLI
 import { SafeAreaView } from "react-native";
+import Mairie from "../stacks/Mairie";
+import Urgences from "../stacks/Urgences";
+import ListesPosts from "../stacks/Posts/ListesPosts"
 
 const AuthentificationStack = createNativeStackNavigator();
 
@@ -41,25 +44,23 @@ const AuthentificationStack = createNativeStackNavigator();
 
 
 export const Deconnexion = () => (
-
   //si l'utilisateur est pas co
 
     <AuthentificationStack.Navigator
       initialRouteName="Inscription"
       options={{ headerShown: false }}
     >
-      <AuthentificationStack.Screen
+      {/* <AuthentificationStack.Screen
         name="Inscription"
         component={Inscription}
         options={{ headerShown: false }}
-      />
+      /> */}
       <AuthentificationStack.Screen
         name="Connexion"
         component={Connexion}
         options={{ headerShown: false }}
       />
     </AuthentificationStack.Navigator>
-
 );
 
 export const ConnexionEffectue = () => (
@@ -75,6 +76,33 @@ export const ConnexionEffectue = () => (
         component={BottomNav}
         options={{ headerShown: false }}
       />
+
+      <AuthentificationStack.Screen
+        name="Mairie"
+        component={Mairie}
+        options={{ headerShown: true, headerStyle : {
+          backgroundColor : "#FFFEDC"
+        } }}
+      />
+
+      <AuthentificationStack.Screen
+        name="Urgences"
+        component={Urgences}
+        options={{ headerShown: true, headerStyle : {
+          backgroundColor : "#FFFEDC"
+        } }}
+
+      />
+
+      <AuthentificationStack.Screen
+        name="Flux General"
+        component={ListesPosts}
+        options={{ headerShown: true, headerStyle : {
+          backgroundColor : "#FFFEDC"
+        } }}
+
+      />
+
     </AuthentificationStack.Navigator>
 )
 
