@@ -29,13 +29,9 @@
     "expo-status-bar": "~1.3.0",
     "firebase": "^8.2.3",
     "formik": "^2.2.9",
-<<<<<<< HEAD
-    "lottie-react-native": "^5.1.3",
+    "lottie-react-native": "^5.0.1",
     "material-icons": "^1.11.1",
     "moment": "^2.29.3",
-=======
-    "lottie-react-native": "5.0.1",
->>>>>>> 2d291d5062e3930177b6877c86aaddb327cd1799
     "node-sass": "^7.0.1",
     "react": "17.0.2",
     "react-bootstrap": "^2.4.0",
